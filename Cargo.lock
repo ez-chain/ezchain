@@ -5169,6 +5169,7 @@ dependencies = [
  "pallet-author-slot-filter",
  "pallet-balances",
  "pallet-base-fee",
+ "pallet-canary-transaction",
  "pallet-collective",
  "pallet-crowdloan-rewards",
  "pallet-democracy",
@@ -6779,6 +6780,21 @@ dependencies = [
  "scale-info",
  "serde",
  "sp-core",
+ "sp-runtime",
+ "sp-std",
+]
+
+[[package]]
+name = "pallet-canary-transaction"
+version = "1.0.0"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "scale-info",
+ "serde",
+ "sp-arithmetic",
+ "sp-io",
  "sp-runtime",
  "sp-std",
 ]

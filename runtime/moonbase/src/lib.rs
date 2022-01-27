@@ -1662,9 +1662,9 @@ impl pallet_base_fee::Config for Runtime {
 }
 
 parameter_types! {
-    pub const NickReservationFee: u128 = 100;
-    pub const MinNickLength: u32 = 8;
-    pub const MaxNickLength: u32 = 32;
+	pub const NickReservationFee: u128 = 100;
+	pub const MinNickLength: u32 = 8;
+	pub const MaxNickLength: u32 = 32;
 }
 
 impl pallet_nicks::Config for Runtime {
@@ -1675,6 +1675,20 @@ impl pallet_nicks::Config for Runtime {
 	type MinLength = MinNickLength;
 	type MaxLength = MaxNickLength;
 	type Event = Event;
+}
+
+type TransactionId = u64;
+
+parameter_types! {
+	pub const MaxSenderTransactions: u16 = 10;
+	pub const MaxReceiverTransactions: u16 = 10;
+}
+
+impl pallet_canary_transaction::Config for Runtime {
+	type Event = Event;
+	type TransactionId = TransactionId;
+	type MaxSenderTransactions = MaxSenderTransactions;
+	type MaxReceiverTransactions = MaxReceiverTransactions;
 }
 
 construct_runtime! {
@@ -1722,6 +1736,7 @@ construct_runtime! {
 		ProxyGenesisCompanion: pallet_proxy_genesis_companion::{Pallet, Config<T>} = 34,
 		BaseFee: pallet_base_fee::{Pallet, Call, Storage, Config<T>, Event} = 35,
 		Nicks: pallet_nicks::{Pallet, Call, Storage, Event<T>} = 36,
+		CanaryTransaction: pallet_canary_transaction::{Pallet, Call, Storage, Event<T>} = 37,
 	}
 }
 
