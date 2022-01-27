@@ -1661,6 +1661,22 @@ impl pallet_base_fee::Config for Runtime {
 	type IsActive = IsActive;
 }
 
+parameter_types! {
+    pub const NickReservationFee: u128 = 100;
+    pub const MinNickLength: u32 = 8;
+    pub const MaxNickLength: u32 = 32;
+}
+
+impl pallet_nicks::Config for Runtime {
+	type Currency = Balances;
+	type ReservationFee = NickReservationFee;
+	type Slashed = ();
+	type ForceOrigin = frame_system::EnsureRoot<AccountId>;
+	type MinLength = MinNickLength;
+	type MaxLength = MaxNickLength;
+	type Event = Event;
+}
+
 construct_runtime! {
 	pub enum Runtime where
 		Block = Block,
@@ -1705,6 +1721,7 @@ construct_runtime! {
 		XcmTransactor: xcm_transactor::{Pallet, Call, Storage, Event<T>} = 33,
 		ProxyGenesisCompanion: pallet_proxy_genesis_companion::{Pallet, Config<T>} = 34,
 		BaseFee: pallet_base_fee::{Pallet, Call, Storage, Config<T>, Event} = 35,
+		Nicks: pallet_nicks::{Pallet, Call, Storage, Event<T>} = 36,
 	}
 }
 

@@ -5187,6 +5187,7 @@ dependencies = [
  "pallet-identity",
  "pallet-maintenance-mode",
  "pallet-migrations",
+ "pallet-nicks",
  "pallet-proxy",
  "pallet-proxy-genesis-companion",
  "pallet-randomness-collective-flip",

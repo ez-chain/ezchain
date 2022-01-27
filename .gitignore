@@ -21,3 +21,7 @@ tools/specFiles
 tools/*-local.json
 tools/*-local-raw.json
 tools/build
+
+# IDE
+.vscode
+.idea
