@@ -60,6 +60,7 @@ pallet-balances = { git = "https://github.com/purestake/substrate", branch = "mo
 pallet-collective = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
 pallet-democracy = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
 pallet-identity = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
+pallet-nicks = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
 pallet-proxy = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
 pallet-randomness-collective-flip = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
 pallet-scheduler = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
@@ -184,6 +185,7 @@ std = [
 	"pallet-evm/std",
 	"pallet-maintenance-mode/std",
 	"pallet-migrations/std",
+	"pallet-nicks/std",
 	"pallet-proxy-genesis-companion/std",
 	"pallet-proxy/std",
 	"pallet-randomness-collective-flip/std",
