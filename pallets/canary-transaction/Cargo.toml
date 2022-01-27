@@ -1,0 +1,33 @@
+[package]
+name = "pallet-canary-transaction"
+authors = [ "PureStake" ]
+edition = "2018"
+version = "1.0.0"
+
+[dependencies]
+serde = { version = "1.0.101", optional = true, features = [ "derive" ] }
+
+# Substrate
+frame-support = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
+frame-system = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
+parity-scale-codec = { version = "2.2", default-features = false, features = [ "derive" ] }
+scale-info = { version = "1.0", default-features = false, features = [ "derive" ] }
+sp-arithmetic = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
+sp-io = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
+sp-runtime = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
+sp-std = { git = "https://github.com/purestake/substrate", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
+
+[features]
+default = [ "std" ]
+std = [
+	"frame-support/std",
+	"frame-system/std",
+	"parity-scale-codec/std",
+	"scale-info/std",
+	"serde",
+	"sp-arithmetic/std",
+	"sp-io/std",
+	"sp-runtime/std",
+	"sp-std/std",
+]
+try-runtime = [ "frame-support/try-runtime" ]

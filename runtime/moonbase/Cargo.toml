@@ -25,6 +25,7 @@ xcm-primitives = { path = "../../primitives/xcm/", default-features = false }
 # Moonbeam pallets
 pallet-asset-manager = { path = "../../pallets/asset-manager", default-features = false }
 pallet-author-mapping = { path = "../../pallets/author-mapping", default-features = false }
+pallet-canary-transaction = { path = "../../pallets/canary-transaction", default-features = false }
 pallet-crowdloan-rewards = { git = "https://github.com/purestake/crowdloan-rewards", branch = "moonbeam-polkadot-v0.9.13", default-features = false }
 pallet-ethereum-chain-id = { path = "../../pallets/ethereum-chain-id", default-features = false }
 pallet-maintenance-mode = { path = "../../pallets/maintenance-mode", default-features = false, features = [ "xcm-support" ] }
@@ -174,6 +175,7 @@ std = [
 	"pallet-author-slot-filter/std",
 	"pallet-balances/std",
 	"pallet-base-fee/std",
+	"pallet-canary-transaction/std",
 	"pallet-collective/std",
 	"pallet-crowdloan-rewards/std",
 	"pallet-democracy-precompiles/std",
